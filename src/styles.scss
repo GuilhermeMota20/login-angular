@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+.color {
+  &__bg-primary {
+    background: #181b23 !important;
+  }
+
+  &__bg-secondary {
+    background: #1f2029 !important;
+  }
+
+  &__primary {
+    background: #6247aa !important;
+  }
+}
+
+body {
+  background: #181b23 !important;
+}
+
+input,
+button {
+  border: none !important;
+  color: #fff !important;
+}
+*:focus {
+  box-shadow: none !important;
+}
