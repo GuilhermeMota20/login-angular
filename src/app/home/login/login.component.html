@@ -1,15 +1,15 @@
-<div class="p-5 rounded color__bg-secondary text-white">
+<div class="p-5 rounded color__bg-secondary text-white lcard">
   <h4 class="mb-5">Login</h4>
 
-  <form class="d-flex row g-3">
+  <form class="d-flex row g-3" (ngSubmit)="login()">
     <div>
       <label for="inputUser" class="form-label">Usuário</label>
-      <input type="text" class="form-control color__bg-primary" id="inputUser">
+      <input type="text" class="form-control color__bg-primary" id="inputUser" name="usuario" [(ngModel)]="usuario">
     </div>
-    
+
     <div>
       <label for="inputPassword" class="form-label">Password</label>
-      <input type="password" class="form-control color__bg-primary" id="inputPassword">
+      <input type="password" class="form-control color__bg-primary" id="inputPassword" name="senha" [(ngModel)]="senha">
     </div>
 
     <div>
