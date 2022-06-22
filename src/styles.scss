@@ -14,6 +14,7 @@
 
 body {
   background: #181b23 !important;
+  color: #fff !important;
 }
 
 input,
@@ -23,6 +24,10 @@ button {
 }
 *:focus {
   box-shadow: none !important;
+}
+*:disabled {
+  cursor: not-allowed !important;
+  filter: brightness(.8) !important;
 }
 
 .lcard {
