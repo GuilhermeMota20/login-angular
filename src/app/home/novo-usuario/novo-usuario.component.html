@@ -4,30 +4,35 @@
   <form class="d-flex row g-3" #loginForm="ngForm" [formGroup]="novoUsuarioForm" (submit)="cadastrar()">
     <div>
       <label for="inputEmail" class="form-label">E-mail</label>
-      <input type="email" class="form-control color__bg-primary" id="inputEmail" name="email" formControlName="email" required>
-      <!-- <app-mensagem *ngIf="inputUsuario.invalid && inputUsuario.touched" mensagem="Usuário obrigatório"></app-mensagem> -->
+      <input type="email" class="form-control color__bg-primary" id="inputEmail" name="email" formControlName="email">
+
+      <app-mensagem *ngIf="novoUsuarioForm.get('email')?.errors?.['required'] && novoUsuarioForm.get('email')?.touched" mensagem="E-mail é obrigatório"></app-mensagem>
+      <app-mensagem *ngIf="novoUsuarioForm.get('email')?.errors?.['email'] && novoUsuarioForm.get('email')?.touched" mensagem="E-mail está incorreto"></app-mensagem>
     </div>
 
     <div>
       <label for="inputFullName" class="form-label">Nome completo</label>
       <input type="text" class="form-control color__bg-primary" id="inputFullName" name="fullName" formControlName="fullName" required>
-      <!-- <app-mensagem *ngIf="inputUsuario.invalid && inputUsuario.touched" mensagem="Usuário obrigatório"></app-mensagem> -->
+
+      <app-mensagem *ngIf="novoUsuarioForm.get('fullName')?.errors?.['required'] && novoUsuarioForm.get('fullName')?.touched" mensagem="Nome completo é obrigatório"></app-mensagem>
     </div>
 
     <div>
       <label for="inputName" class="form-label">Nome de usuário</label>
       <input type="text" class="form-control color__bg-primary" id="inputName" name="userName" formControlName="userName" required>
-      <!-- <app-mensagem *ngIf="inputUsuario.invalid && inputUsuario.touched" mensagem="Usuário obrigatório"></app-mensagem> -->
+
+      <app-mensagem *ngIf="novoUsuarioForm.get('userName')?.errors?.['lowercaseValidator'] && novoUsuarioForm.get('userName')?.touched" mensagem="Usuário deve conter somente letras minusculas"></app-mensagem>
     </div>
 
     <div>
       <label for="inputPassword" class="form-label">Password</label>
       <input type="password" class="form-control color__bg-primary" id="inputPassword" name="password" formControlName="password" required>
-      <!-- <app-mensagem *ngIf="inputSenha.invalid && inputSenha.touched" mensagem="Senha obrigatória"></app-mensagem> -->
+
+      <app-mensagem *ngIf="novoUsuarioForm.get('password')?.errors?.['required'] && novoUsuarioForm.get('password')?.touched" mensagem="Senha obrigatória"></app-mensagem>
     </div>
 
     <div>
-      <button type="submit" class="btn color__primary text-white w-100 mt-3" [disabled]="loginForm.invalid">Cadastrar</button>
+      <button type="submit" class="btn color__primary text-white w-100 mt-3" [disabled]="novoUsuarioForm.invalid">Cadastrar</button>
     </div>
   </form>
 
