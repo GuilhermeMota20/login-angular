@@ -43,7 +43,7 @@ export class NovoUsuarioComponent implements OnInit {
           Validators.required,
         ]],
       },
-      
+
       {
         validators: [userPassEqualsValidator],
       }
@@ -55,7 +55,7 @@ export class NovoUsuarioComponent implements OnInit {
   }
 
   cadastrar() {
-    // if (this.novoUsuarioForm.valid) {
+    if (this.novoUsuarioForm.valid) {
       const novoUsuario = this.novoUsuarioForm.getRawValue() as NovoUsuario;
 
       this.novoUsuarioService.cadastraNovoUsuario(novoUsuario)
@@ -67,6 +67,6 @@ export class NovoUsuarioComponent implements OnInit {
           console.log(error);
         }
       );
-    // };
+    };
   };
 }
