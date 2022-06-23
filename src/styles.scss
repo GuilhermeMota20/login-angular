@@ -29,6 +29,9 @@ button {
   cursor: not-allowed !important;
   filter: brightness(.8) !important;
 }
+* {
+  -webkit-font-smoothing: antialiased !important;
+}
 
 a {
   text-decoration: none !important;
