@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { HeaderComponent } from '../componentes/header/header.component';
 import { MensagemModule } from '../componentes/mensagem/mensagem.module';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
@@ -15,7 +16,7 @@ import { NovoUsuarioComponent } from './novo-usuario/novo-usuario.component';
     HomeRoutingModule,
     FormsModule,
     MensagemModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [ HomeComponent ],
 })

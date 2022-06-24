@@ -1,1 +1,28 @@
-<p>header works!</p>
+<header class="sticky-top">
+  <nav class="navbar navbar-dark color__primary">
+    <div class="container">
+      <a class="navbar-brand logo">LoginAngular</a>
+
+      <div *ngIf="user$ | async as user">
+        <div class="d-flex gap-4 align-items-center user" *ngIf="user.name; else login">
+          <div class="d-flex align-items-center justify-content-center user__container">
+            <div class="color__bg-secondary py-2 px-4 user__container__avatar h-100">
+              <i class="fa fa-user-circle"></i>
+            </div>
+            <div class="color__bg-primary py-2 px-4 user__container__name">
+              <a class="text-white">{{ user.name }}</a>
+            </div>
+          </div>
+
+          <i (click)="logout()" class="fa fa-sign-out py-3 px-4 rounded user__container__logout color__bg-secondary"></i>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <ng-template #login>
+    <span class="navbar-text">
+      <a [routerLink]="['']">Login</a>
+    </span>
+  </ng-template>
+</header>

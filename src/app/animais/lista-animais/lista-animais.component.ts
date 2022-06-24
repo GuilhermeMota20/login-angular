@@ -9,7 +9,6 @@ export class ListaAnimaisComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }
